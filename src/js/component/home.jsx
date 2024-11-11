@@ -25,6 +25,7 @@ const Home = () => {
 				...taskList,
 				task
 			])
+			setTask("")
 		}
 
 	}
@@ -44,7 +45,7 @@ const Home = () => {
 
 							<h1 className="d-flex justify-content-center">To Do List </h1>
 							<div className="form-group mt-3 card border-dark-subtle">
-								
+
 								<input
 
 									type="text"
@@ -63,20 +64,21 @@ const Home = () => {
 											taskList.map((item, index) => {
 
 												return (
-													<h3 className="p-3 mt-4 mb-4 border border-2 border-dark-subtle letterType textColor"
-														onClick={() => deleteTask(index)}>{item}</h3>
-
+													<h3 className="p-3 mt-4 mb-4 border border-2 border-dark-subtle letterType textColor "
+														onClick={() => deleteTask(index)}>{item}<span className="icon-delete" >x</span></h3>
+														
 												)
-
+												
 											}
 											)
 
 										}
 									</div>
-
+									
 									<div>
 
 										<p className="textColor">{taskList.length == 0 ? "You don't have more task" : taskList.length} Task to do </p>
+										
 
 									</div>
 
